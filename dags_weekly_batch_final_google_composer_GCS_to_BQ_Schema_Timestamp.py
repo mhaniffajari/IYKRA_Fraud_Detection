@@ -15,7 +15,7 @@ BUCKET = "fellowship-777"
 
 dataset = "fraud_dataset_timestamp"
 dataset_file = "fraud_dataset_timestamp.csv"
-dataset_url = f"https://storage.cloud.google.com/fellowship-777/{dataset_file}"
+dataset_url = f"https://storage.googleapis.com/fellowship-777/data-lake/fraud_dataset_timestamp.csv"
 # path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 path_to_local_home = "/home/airflow/gcs/data"
 BIGQUERY_DATASET = os.environ.get("fraud_dataset", 'fraud_dataset')
@@ -74,8 +74,8 @@ with DAG(
     GCStoBQ = GCSToBigQueryOperator(
          task_id="GCStoBQ_task",
          bucket = 'fellowship-777',
-         source_objects= "data-lake/fraud_dataset_timestamp.csv",
-         destination_project_dataset_table=  "{}.{}.{}".format(PROJECT_ID,"fraud_dataset_schema_timestamp_batch","fraud_dataset_schema_timestamp_batch"),
+         source_objects= "data-lake-new/fraud_dataset_timestamp.csv",
+         destination_project_dataset_table=  "{}.{}.{}".format(PROJECT_ID,"fraud_dataset_timestamp","fraud_dataset_schema_timestamp_batch"),
          schema_fields=[{"name": "type", "type": "STRING", "mode": "NULLABLE"},
                {"name": "amount", "type": "STRING", "mode": "NULLABLE"},
                {"name": "nameOrig", "type": "STRING", "mode": "NULLABLE"},
@@ -87,7 +87,8 @@ with DAG(
                {"name": "isFraud", "type": "STRING", "mode": "NULLABLE"},
                {"name": "isFlaggedFraud", "type": "STRING", "mode": "NULLABLE"},
                {"name": "timestamp", "type": "STRING", "mode": "NULLABLE"},
-               ]
+               ],
+        skip_leading_rows= 1
     )
 
     download_dataset_task >> local_to_gcs_task  >> GCStoBQ
