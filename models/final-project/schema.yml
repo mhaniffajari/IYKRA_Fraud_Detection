@@ -1,12 +1,12 @@
 version : 2
 
 sources:
-    - name: fraud_dataset_timestamp
+    - name: fraud_dataset_schema_timestamp_batch
       description : "database green trip performances in 2021"
       database: clever-seat-363006
-      schema : fraud_dataset_timestamp
+      schema : fraud_dataset_schema_timestamp_batch
       tables:
-        - name : fraud_dataset_timestamp
+        - name : fraud_dataset_schema_timestamp_batch
 
 models:
   - name: source-table

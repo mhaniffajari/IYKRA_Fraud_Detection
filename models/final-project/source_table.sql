@@ -1,1 +1,0 @@
-select * from {{source('fraud_dataset_timestamp','fraud_dataset_timestamp')}}
