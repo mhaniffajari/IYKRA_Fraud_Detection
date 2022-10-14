@@ -49,7 +49,7 @@ default_args = {
 
 with DAG(
     dag_id="fraud_dataset_schema_timestamp_batch",
-    schedule_interval="@weekly",
+    schedule_interval="@hourly",
     default_args=default_args,
     catchup=False,
     max_active_runs=1,
