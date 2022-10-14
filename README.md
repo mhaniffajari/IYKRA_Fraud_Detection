@@ -1,15 +1,19 @@
-Welcome to your new dbt project!
+# Fraud Detection
 
-### Using the starter project
+## Stream Processing
 
-Try running the following commands:
-- dbt run
-- dbt test
+  1. Install python version 3 or above
+  2. Pip install google.cloud
+  3. Upload google credentials (Pub/Sub Producer)
+  4. Create Pub/Sub topics and dataset Google Big Query
+  5. Determine the schema of the dataset in Google Pub/Sub, Google Big Query
+  6  Run the code
+ 
+## Batch Processing
+
+  1. Setup the Google Composer
+  2. Created schema of dataset in dags
+  3. Run the code
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](http://community.getbdt.com/) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+
