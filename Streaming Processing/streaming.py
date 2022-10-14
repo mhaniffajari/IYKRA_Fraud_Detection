@@ -1,9 +1,4 @@
 import os
-# os.environ['CONDA_DLL_SEARCH_MODIFICATION_ENABLE'] = '1'
-
-# from confluent_kafka import avro
-# from confluent_kafka.avro import AvroProducer
-
 import csv
 from time import sleep
 import os
@@ -11,10 +6,10 @@ from google.cloud import pubsub_v1
 import json
 import base64
 from confluent_kafka import avro
-credentials_path = 'key.json'
+credentials_path = 'YOUR_CREDENTIAL_KEY.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
 publisher = pubsub_v1.PublisherClient()
-topic_path = 'projects/ace-mile-362915/topics/group1_topic'
+topic_path = 'YOUR_TOPIC_PATH'
 
 
 def send_record():
