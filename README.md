@@ -19,8 +19,8 @@
   
   1. Start your dbt cloud/dbt core
   2. Use the models in "Transformation with dbt" folders
-  3. Connect your main table in bigquery to '''source_table.sql''' model
-  4. In '''tidying_the_columns.sql''' model, you can specify columns order and data types to your liking
+  3. Connect your main table in bigquery to ```source_table.sql``` model
+  4. In ```tidying_the_columns.sql``` model, you can specify columns order and data types to your liking
   5. Do some transformation. In this repo we create partitioning/clustering and denormalizing data to compare their performace in bigquery
   
   The lineage should look like this :
