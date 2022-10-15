@@ -21,7 +21,7 @@
   2. Use the models in "Transformation with dbt" folders
   3. Connect your main table in bigquery to ```source_table.sql``` model
   4. In ```tidying_the_columns.sql``` model, you can specify columns order and data types to your liking
-  5. Do some transformation. In this repo we create partitioning/clustering and denormalizing transformation to compare their performace in bigquery
+  5. Do some transformation. In this repo we create partitioning/clustering in ```final_project_partitioned.sql``` and denormalizing in ```final_project_nested.sql``` to compare their performace in bigquery
   
   The lineage should look like this :
   ![](https://github.com/mhaniffajari/IYKRA_Fraud_Detection/blob/main/Transformation%20with%20dbt/lineage_graph.png)
